@@ -56,7 +56,7 @@ namespace Code
                                 while (string.IsNullOrEmpty(gamers[index].Name))
                                 {
                                     Console.Write("ENTER PLAYER 1 NAME: ");
-                                    while (!int.TryParse(name = Console.ReadLine(), out option))
+                                    while (string.IsNullOrEmpty(name = Console.ReadLine()))
                                     {
                                         Console.WriteLine("Invalid option value, please try again.");
                                     }
@@ -76,15 +76,15 @@ namespace Code
                                 while (string.IsNullOrEmpty(gamers[index].Name))
                                 {
                                    Console.Write("ENTER PLAYER 2 NAME: ");
-                                    while (!int.TryParse(name = Console.ReadLine(), out option))
+                                    while (string.IsNullOrEmpty(name = Console.ReadLine()))
                                     {
                                         Console.WriteLine("Invalid option value, please try again.");
                                     }
 
                                     if (Array.Exists(gamers, Player => Player.Name == name))
-                                   {
+                                    {
                                       Console.WriteLine("That name is already taken, try another one");
-                                   }
+                                    }
                                    else
                                    {
                                        gamers[index].Name = name;

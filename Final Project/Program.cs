@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Codigo
+namespace Code
 {
     public struct Players
     {
@@ -10,11 +10,11 @@ namespace Codigo
         public Players(string PlayerName, int PlayerScore)
         {
             Name = PlayerName;
-            Score = PlayerScore;
+            Score = PlayerScore;//comentario
         }
     }
 
-    public class Juego
+    public class Game
     {
 
         public static void Main()
@@ -23,6 +23,7 @@ namespace Codigo
             
             bool exit = false;
             int index = 0;
+            int games = 0;
             Players[] gamers = new Players[10];
             
             while (exit == false)
@@ -47,46 +48,56 @@ namespace Codigo
 
                     case 1:
                         {
-                            string name = "";
-                            while (string.IsNullOrEmpty(gamers[index].Name))
+                            if (games < 5)
                             {
-                                Console.Write("ENTER PLAYER 1 NAME: ");
-                                name = Console.ReadLine();
+                                Console.WriteLine("-------------------------");
+                                Console.WriteLine("PLAYER NAMES\r\n");
+                                string name = "";
+                                while (string.IsNullOrEmpty(gamers[index].Name))
+                                {
+                                    Console.Write("ENTER PLAYER 1 NAME: ");
+                                    name = Console.ReadLine();
 
-                                if (Array.Exists(gamers, Player => Player.Name == name))
-                                {
-                                    Console.WriteLine("That name is already taken, try another one");
+                                    if (Array.Exists(gamers, Player => Player.Name == name))
+                                    {
+                                        Console.WriteLine("That name is already taken, try another one");
+                                    }
+                                    else
+                                    {
+                                        gamers[index].Name = name;
+                                        break;
+                                    }
                                 }
-                                else
+                                Console.WriteLine();
+                                index++;
+                                while (string.IsNullOrEmpty(gamers[index].Name))
                                 {
-                                    gamers[index].Name = name;
-                                    break;
+                                   Console.Write("ENTER PLAYER 2 NAME: ");
+                                   name = Console.ReadLine();
+
+                                   if (Array.Exists(gamers, Player => Player.Name == name))
+                                   {
+                                      Console.WriteLine("That name is already taken, try another one");
+                                   }
+                                   else
+                                   {
+                                       gamers[index].Name = name;
+                                       break;
+                                   }
                                 }
                             }
-                        
-                            Console.WriteLine();
-                            index++;
-                            while (string.IsNullOrEmpty(gamers[index].Name))
+                            else
                             {
-                                Console.Write("ENTER PLAYER 2 NAME: ");
-                                name = Console.ReadLine();
-                                gamers[index].Name = name;
-
-                                if (!Array.Exists(gamers, Player => Player.Name == name))
-                                {
-                                    Console.WriteLine("That name is already taken, try another one");
-                                }
-                                else
-                                {
-                                    break;
-                                }
+                                Console.WriteLine("MAX NUMBER OF PLAYERS REACHED");
                             }
                             index++;
+                            games++;
                             Console.Write("press ENTER to return to the menu"); Console.ReadLine();
                             break;
                         }
                     case 2:
                         {
+                            Console.WriteLine("-------------------------");
                             Console.WriteLine("HIGHSCORES");
                             Console.WriteLine("PLAYER\tNAME\tSCORE");
                             for (int i = 0; i < gamers.Length; i++)
@@ -101,12 +112,17 @@ namespace Codigo
                             break;
                         }
                     case 3:
-                        { 
+                        {
+
+                            Console.WriteLine("-------------------------");
+                            Console.WriteLine("THANK YOU FOR PLAYING!\r\n" +
+                            "HOPE TO SEE YOU SOON :)");
                             exit = true;
                             break;
                         }
                     default:
                         {
+                            Console.WriteLine("-------------------------");
                             Console.WriteLine("INVALID OPTION");
                             Console.Write("press ENTER to return to the menu"); Console.ReadLine();
                             break;

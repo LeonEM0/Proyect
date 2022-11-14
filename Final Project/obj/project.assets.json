@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\agusl\\source\\repos\\Final Project\\Final Project\\Final Project.csproj",
+      "projectUniqueName": "C:\\LaSalle\\P16\\P16-FinalProject\\Proyect\\Final Project\\Final Project.csproj",
       "projectName": "Final Project",
-      "projectPath": "C:\\Users\\agusl\\source\\repos\\Final Project\\Final Project\\Final Project.csproj",
+      "projectPath": "C:\\LaSalle\\P16\\P16-FinalProject\\Proyect\\Final Project\\Final Project.csproj",
       "packagesPath": "C:\\Users\\agusl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\agusl\\source\\repos\\Final Project\\Final Project\\obj\\",
+      "outputPath": "C:\\LaSalle\\P16\\P16-FinalProject\\Proyect\\Final Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\agusl\\AppData\\Roaming\\NuGet\\NuGet.Config",
